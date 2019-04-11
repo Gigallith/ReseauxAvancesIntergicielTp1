@@ -20,7 +20,7 @@ public class ServiceImpl extends UnicastRemoteObject implements Service {
     }
 
     @Override
-    public int multiplyBy(int factor, String cname) {
+    public synchronized int multiplyBy(int factor, String cname) {
         val=val*factor;
         try {
             Thread.sleep(500);
