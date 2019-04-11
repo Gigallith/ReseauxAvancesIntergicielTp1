@@ -7,4 +7,6 @@ import java.rmi.RemoteException;
  */
 public interface Distante extends Remote {
     public void echo() throws RemoteException;
+    public Resultat result(int i)  throws RemoteException;
+    public Service login() throws  RemoteException;
 }
