@@ -2,6 +2,7 @@ package Server;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -19,14 +20,13 @@ public class ObjetDistant extends UnicastRemoteObject implements Distante {
     }
 
     @Override
-    public Resultat result(int i) {
+    public Resultat result(int i) throws RemoteException {
         System.out.println("calcul result");
         return new Resultat2(i);
     }
 
     @Override
-    public Service login() {
-        System.out.println(service);
+    public Service login() throws RemoteException{
         return service;
     }
 
